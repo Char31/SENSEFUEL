@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    couchbase:
+        image: sensfuelcouchbase
+        container_name: couchbase
+        ports:
+            - 8091:8091
+            - 8092:8092
+            - 8093:8093
+        environment:
+            - COUCHBASE_ADMINISTRATOR_USERNAME=Administrator
+            - COUCHBASE_ADMINISTRATOR_PASSWORD=password
+            - COUCHBASE_BUCKET=cart
+
+    nodejs:
+        image: sensfuelangular
+        depends_on:
+            - couchbase
+        ports:
+            - 3000:3000
+        environment:
+            - DB_HOST=couchbase
+            - COUCHBASE_BUCKET=cart
+            - DB_ADMIN_USER=Administrator
+            - DB_ADMIN_PWD=password
+        restart: always

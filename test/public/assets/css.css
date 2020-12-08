@@ -1,0 +1,49 @@
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+.products {
+    width: 200px;
+    text-align: center;
+}
+
+.product_img {
+    width: 100%;
+}
+
+#cart {
+    position:absolute;
+    right:25px;
+    top:25px;
+    background-color:#eee;
+    border:1px solid #ccc;
+    padding:15px;
+}
+
+.cart__title {
+    color:#555;
+    text-transform: uppercase;
+    text-align: center;
+    background-color:#ccc;
+    padding: 10px;
+}
+
+.cart__content {
+    padding: 10px;
+}
+
+
+.product_price_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.product_discount {
+    background: green;
+}
